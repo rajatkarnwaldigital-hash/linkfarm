@@ -146,7 +146,13 @@ Python 3.9+ required.
 
 ### Step 1 — Prepare your input
 
-Export outgoing domain reports from Ahrefs for each known link farm, merge, clean out non-website rows, and save as `link_farm_domains.csv`. See Input preparation section above for exact column requirements.
+Export the raw outgoing-domain CSV from Ahrefs for each known link farm (Outgoing Links → Linked Domains), list the filenames in `INPUT_FILES` at the top of `process_link_farms.py`, then run:
+
+```bash
+python3 process_link_farms.py
+```
+
+This produces `link_farm_prospects.csv` — rename it to `link_farm_domains.csv` (or update `INPUT_FILE` in `link_farm_qualify.py`). See the Input preparation section above for full details on what the script does.
 
 ### Step 2 — Run link_farm_qualify.py
 
